@@ -3,10 +3,11 @@ package com.techelevator.controller;
 import com.techelevator.dao.LandmarkDao;
 import com.techelevator.model.Landmark;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@PreAuthorize("isAuthenticated()")
 @RestController
 @CrossOrigin
 @RequestMapping(path = "/landmarks")

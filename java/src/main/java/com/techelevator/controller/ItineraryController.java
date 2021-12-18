@@ -4,10 +4,11 @@ import com.techelevator.dao.ItineraryDao;
 import com.techelevator.model.Itinerary;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@PreAuthorize("isAuthenticated()")
 @RestController
 @CrossOrigin
 public class ItineraryController {
